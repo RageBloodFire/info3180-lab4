@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+<link rel="stylesheet" href="{{ url_for('static', filename="css/app.css") }}">
+{% block main %}
+<h1 class="page-header">Uploaded Images</h1>
+    
+    <ul id="list">
+        {% for img in form %}
+        <li id="imgs">
+            
+            <img src="{{ url_for('static', filename='uploads/'+img) }}" alt="Some Image"/>
+            
+        </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
